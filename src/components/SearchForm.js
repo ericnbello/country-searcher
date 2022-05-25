@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Grid from "./Grid";
 import axios from "axios";
 
@@ -32,7 +32,6 @@ export default function SearchForm (props) {
                 </label>
                 <input 
                     className="bg-darkBlue text-greyishBlue border-none w-64" 
-                    // style={{color: 'black'}}
                     type="text" 
                     placeholder='Search for a country...'  
                     onChange={handleNameSearch}

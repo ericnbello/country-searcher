@@ -1,5 +1,3 @@
-// import logo from './logo.svg';
-// import './App.css';
 import React from "react";
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -9,19 +7,17 @@ import axios from "axios";
 import Home from './pages/Home';
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import CountryCard from "./components/CountryCard";
 import CountryPage from "./components/CountryPage";
-import SearchForm from "./components/SearchForm";
 
 function App() {
   const [allData, setAllData] = useState(null);
-  const [regionsData, setRegionsData] = useState(null);
+  // const [regionsData, setRegionsData] = useState(null);
 
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
-  const [regionSearchTerm, setRegionSearchTerm] = useState('');
-  const handleRegionSearch = e => setRegionSearchTerm(e.target.value);
+  // const [regionSearchTerm, setRegionSearchTerm] = useState('');
+  // const handleRegionSearch = e => setRegionSearchTerm(e.target.value);
 
   // const [namesData, setNamesData] = useState(null);
   // const [nameSearchTerm, setNameSearchTerm] = useState('');
@@ -33,10 +29,11 @@ function App() {
         setAllData(response.data);
         console.log(allData)
       })
-      .catch((error) => {
-        setError(error)
-        console.log(error)
-      })
+      // .catch((error) => {
+      //   setError(error.error)
+      //   console.log(error)
+      // })
+      // eslint-disable-next-line
   }, []);
 
   if (!allData) return null;
@@ -51,10 +48,6 @@ function App() {
           <Routes>
             <Route path="/" element={<Home 
                                         allData={allData}
-                                        // regionsArr={regionsData}
-                                        // regionSearchTerm={regionSearchTerm}
-                                        // setRegionSearchTerm={setRegionSearchTerm}
-                                        // handleRegionSearch={handleRegionSearch}
                                     />} 
             />
               
